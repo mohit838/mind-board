@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build
+    ports:
+      - '9191:9191'
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - app_dist:/app/dist # Use Docker volume instead of host directory
+    command: ['npm', 'run', 'preview']
+    restart: always # Add restart policy here
+
+  redis:
+    image: redis/redis-stack:latest # Official Redis Stack image
+    container_name: redis-stack
+    ports:
+      - '6379:6379' # Redis default port
+      - '8001:8001' # RedisInsight (Redis GUI) port
+    volumes:
+      - redis_data:/data # Persist Redis data
+    restart: always # Ensure Redis restarts automatically
+
+volumes:
+  app_dist:
+  redis_data:
