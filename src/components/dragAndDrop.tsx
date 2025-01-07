@@ -1,7 +1,7 @@
 import { data } from '../assets';
+import { useDragAndDrop } from '../hook/useDragAndDrop';
 import { Status } from '../interface';
 import { ContainerCards } from './containerCards';
-import { useDragAndDrop } from '../hook/useDragAndDrop';
 
 const typesHero: Status[] = ['good', 'normal', 'bad'];
 
@@ -11,7 +11,7 @@ export const DragAndDrop = () => {
 
   return (
     <div className="grid">
-      {typesHero.map((container) => (
+      {typesHero?.map((container) => (
         <ContainerCards
           items={listItems}
           status={container}

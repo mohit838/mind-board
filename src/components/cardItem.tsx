@@ -21,6 +21,7 @@ export const CardItem = ({ data, handleDragging }: Props) => {
       onDragEnd={handleDragEnd}
     >
       <p>{data.content}</p>
+      <small>Sequence: {data.sequence}</small>
     </div>
   );
 };
