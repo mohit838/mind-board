@@ -1,16 +1,11 @@
-import { useState } from 'react';
-import './App.css';
+import { DragAndDrop } from './components/dragAndDrop';
+import Title from './components/title';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-2xl">
-      <h1>Vite + React</h1>
-
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+    <div className="container flex flex-col items-center justify-start min-h-screen mx-auto gap-5">
+      <Title />
+      <DragAndDrop />
     </div>
   );
 }
