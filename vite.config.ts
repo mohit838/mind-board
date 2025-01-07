@@ -9,7 +9,7 @@ export default defineConfig({
     host: true,
   },
   preview: {
-    port: 9192,
+    port: 9191,
     host: true,
   },
   build: {
